@@ -1,0 +1,12 @@
+{% extends "trip/_base.html" %}
+{% load tailwind_filters %}
+{% block content %}
+  <form method="post" enctype="multipart/form-data">
+    <h1 class="text-4xl underline underline-offset-4 mb-8">Note Form</h1>
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit"
+           value="Save"
+           class="bg-green-300 px-7 py-2 rounded hover:bg-green-400 hover:cursor-pointer">
+  </form>
+{% endblock content %}
